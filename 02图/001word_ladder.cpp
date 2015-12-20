@@ -7,4 +7,29 @@ end  ="cog"
 dict =[hot,dot,dog,lot,log]
 hit -> hot -> dot -> dog -> cog
 */
+/*
+思路：路径内的单词在词典里，但起点和终点的单词没有要求
+搜索路径可以用图
+*/
+#include <iostream>
+#include <string>
+using namespace std;
+
+
+int main()
+{
+	set<string> dict;
+	dict.insert("hot");
+	dict.insert("dot");
+	dict.insert("dog");
+	dict.insert("lot");
+	dict.insert("log");
+	string start = "hit";
+	string end   = "cog";
+	cout << CalLength(start, end, dict);
+	return 0;	
+}
+
+
+
 
