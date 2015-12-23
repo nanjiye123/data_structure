@@ -15,6 +15,14 @@ hit -> hot -> dot -> dog -> cog
 #include <string>
 using namespace std;
 
+int CalLength(const string& start, const string& end, const set<string>& dict)
+{
+	queue<string> q;
+	q.push(start);
+	
+
+	return ;
+}
 
 int main()
 {
@@ -26,7 +34,7 @@ int main()
 	dict.insert("log");
 	string start = "hit";
 	string end   = "cog";
-	cout << CalLength(start, end, dict);
+	cout << CalLength(start, end, dict);//计算最短长度数
 	return 0;	
 }
 
