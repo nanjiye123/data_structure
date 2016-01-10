@@ -121,11 +121,14 @@ HeadNode* Dijkstra(HeadNode* G, int startNode)
 		Node *node = G[tmpMinPos].link;
 		while(node)
 		{
-			AdjType weight = node->weight;
-			if(G[tmpMinPos].length+weight < G[node->adjvex].length)
-			{//如果当前终止点的权重 大于 当前起始点加weight，即现在的路径比原路径的权重小
-				G[node->adjvex].length = G[tmpMinPos].length+weight;
-				G[node->adjvex].parent = tmpMinPos;
+			if(!G[node->adjvex].isKnown)
+			{
+				AdjType weight = node->weight;
+				if(G[tmpMinPos].length+weight < G[node->adjvex].length)
+				{//如果当前终止点的权重 大于 当前起始点加weight，即现在的路径比原路径的权重小
+					G[node->adjvex].length = G[tmpMinPos].length+weight;
+					G[node->adjvex].parent = tmpMinPos;
+				}
 			}
 			node = node->next;
 		}//end while(node)
